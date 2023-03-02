@@ -15,6 +15,10 @@
 	<name>springboot-maven-course-micro-svc</name>
 	<description>Demo project for Spring Boot</description>
     <properties>
+	     <sonar.host.url>http://tg-1341153727.ap-southeast-1.elb.amazonaws.com</sonar.host.url>
+    <sonar.log.level>DEBUG</sonar.log.level>
+    <sonar.verbose>true</sonar.verbose>
+    <sonar.coverage.exclusions>**/*.js</sonar.coverage.exclusions>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.release>17</maven.compiler.release>
@@ -44,6 +48,19 @@
 
 	<build>
 		<plugins>
+			<plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.2</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			 <plugin>
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
@@ -54,6 +71,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		
+		
 	</build>
 
 </project>
