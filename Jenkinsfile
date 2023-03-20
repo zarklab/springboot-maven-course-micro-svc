@@ -8,7 +8,6 @@ pipeline{
     }
     tools { 
         maven 'maven-3.8.1' 
-       
     }
     agent {
         label 'master'
