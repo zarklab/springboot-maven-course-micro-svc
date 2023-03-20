@@ -7,7 +7,7 @@ pipeline{
     job_root_dir="${env.WORKSPACE}"
     }
     tools { 
-        maven 'maven-3.8.1' 
+        maven 'Maven-3.8.1' 
     }
     agent {
         label 'master'
