@@ -19,7 +19,7 @@ pipeline{
         }
         stage('sonarqube analysis'){
             steps{
-                withSonarQubeEnv(installationName: 'sonar-9') {
+                withSonarQubeEnv('SonarQube1') {
    sh "/tmp/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner   -Dsonar.projectKey=hellospringboot -Dsonar.projectName=hellospringboot -Dsonar.sourceEncoding=UTF-8 -Dsonar.sources=src"
     }
             }
