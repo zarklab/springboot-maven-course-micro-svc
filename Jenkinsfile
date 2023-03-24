@@ -22,7 +22,7 @@ pipeline{
         sh(script: "mkdir -p ${artifacts_dir}", label: 'Create artifacts directory')
         }
     }
-            stage('git stage'){
+            stage('git stage1'){
                 steps{
                     git branch: 'main', url: 'https://github.com/zarklab/springboot-maven-course-micro-svc.git'
                 }
