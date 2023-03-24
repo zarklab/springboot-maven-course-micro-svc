@@ -32,7 +32,7 @@ pipeline{
                    sh 'mvn clean package'
                 }
             }
-		stage('Generate kubeconfig for the cluster') {
+		stage('Generate kubeconfig for the cluster1') {
         steps {
         script {
             env.KUBECONFIG = "${artifacts_dir}/${eks_cluster_name}-kubeconfig"
